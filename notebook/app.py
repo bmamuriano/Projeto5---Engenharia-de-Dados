@@ -1,9 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from pathlib import Path  # Certifique-se de importar Path
+from pathlib import Path
 
-# Lê o conjunto de dados
 df = pd.read_csv(Path("..\\dados\\vehicles.csv"))
 
 # Exibe a porcentagem de valores ausentes
@@ -21,9 +20,6 @@ if hist_button:  # Se o botão for clicado
     
     # Exibir um gráfico Plotly interativo
     st.plotly_chart(fig, use_container_width=True)
-
-   # Lê o conjunto de dados
-df = pd.read_csv(Path("..\\dados\\vehicles.csv"))
 
 # Exibe a porcentagem de valores ausentes
 st.write(df.isna().mean().sort_values(ascending=False).head(5))
