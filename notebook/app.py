@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 from pathlib import Path
 
-df = pd.read_csv(Path("..\\dados\\vehicles.csv"))
+df = pd.read_csv(Path("dados/vehicles.csv"))
 
 # Exibe a porcentagem de valores ausentes
 st.write(df.isna().mean().sort_values(ascending=False).head(5))
